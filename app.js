@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const port = process.evn.PORT || 3000
+const port = process.env.PORT || 3000
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const users = ('./routs/users')
-const groups = ('./routs/groups')
+const users = require('./routes/users')
+const groups = require('./routes/groups')
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,5 +14,7 @@ app.use('/groups', groups)
 
 
 app.listen(port, ()=>{
-  conosle.log('app listining on port ' + port);
+  console.log('app listining on port ' + port);
 })
+
+module.exports=app;

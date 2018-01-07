@@ -5,4 +5,5 @@ const knex = require('../knex');
 router.get('/', (req, res)=>{
   conosle.log('in get')
 })
+
 module.exports = router;
